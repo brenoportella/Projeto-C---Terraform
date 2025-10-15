@@ -11,7 +11,7 @@ sudo apt-get install -y nginx curl
 sudo mkdir -p /var/www/html
 
 # copy html file to nginx path
-sudo cp /home/ubuntu/project-c/site/index.html /var/www/html/index.html
+sudo cp ../site/index.html /var/www/html/index.html
 
 # starts nginx service
 sudo systemctl enable nginx
@@ -20,4 +20,8 @@ sudo systemctl restart nginx
 # show status
 sudo systemctl status nginx --no-pager
 
+
+sudo ufw enable
+sudo ufw allow 'Nginx HTTP'
+sudo ufw allow openSSH
 curl http://localhost
